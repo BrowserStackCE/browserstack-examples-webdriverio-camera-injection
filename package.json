@@ -1,0 +1,27 @@
+{
+  "name": "browserstack-camera-wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "android": "export PLATFORM_NAME=Android; wdio wdio.conf.js --spec ./test/specs/android.js",
+    "iOS": "export PLATFORM_NAME=iOS; wdio wdio.conf.js --spec ./test/specs/iOS.js"
+  },
+  "keywords": [],
+  "author": "Harsh Jain",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^7.16.12",
+    "axios": "^0.24.0",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/register": "^7.16.7",
+    "@wdio/browserstack-service": "^7.16.12",
+    "@wdio/local-runner": "^7.16.12",
+    "@wdio/mocha-framework": "^7.16.11",
+    "@wdio/spec-reporter": "^7.16.11"
+  }
+}
