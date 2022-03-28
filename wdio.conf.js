@@ -67,13 +67,13 @@ exports.config = {
     {
       project: "Webdriverio Camera Injection Project",
       build: "Camera Injection Demo",
-      name: `${process.env.PLATFORM_NAME} Camera Injection`,
       "browserstack.debug": "true",
       "browserstack.enableCameraImageInjection": "true",
       app: process.env.BROWSERSTACK_APP_ID,
     },
   ],
-  logLevel: "info",
+  //For additional logs, please set to info or trace
+  logLevel: "silent",
 
   bail: 0,
   baseUrl: "",
@@ -176,7 +176,7 @@ exports.config = {
    * @param {Array.<String>} specs        List of spec file paths that are to be run
    * @param {Object}         browser      instance of created browser/device session
    */
-  before: async function (capabilities, specs) {
+  before: async function () {
     var imageResponse = await mediaUploadApiResponse();
     driver.execute(
       'browserstack_executor: {"action": "cameraImageInjection", "arguments": {"imageUrl":"' +
